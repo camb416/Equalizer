@@ -16,36 +16,22 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
-		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		60FC3D1FF044403DB3E85E1F /* _ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59F8A27E1D5E42149DCF6F15 /* _ViewController.cpp */; };
-		1A6693137D6A4CDCA0FEF587 /* _View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FD80ADDDD614D59B068C550 /* _View.cpp */; };
-		BFAA6E57BEC8433EA132FC7C /* _TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD02C14CBA0C4822A8474FB3 /* _TextView.cpp */; };
-		9567CDD6089A4E179DB7D113 /* _ShapeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B631ED87D1BA4266B78380F6 /* _ShapeView.cpp */; };
-		EF31947948094FF2ACE02F7A /* _Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2926D4ED71B44CBB5E2F6A5 /* _Scene.cpp */; };
-		6842C051DD0543C2825DA760 /* _MatrixSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E36830D6494440069700C72F /* _MatrixSet.cpp */; };
-		B7220C08B856456E81E66797 /* _ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF0819D336434CF7A874A577 /* _ImageView.cpp */; };
 		11D80846B4DD4083AC44E78E /* _Events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 893301F89B5242C29D784A36 /* _Events.cpp */; };
+		1A6693137D6A4CDCA0FEF587 /* _View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FD80ADDDD614D59B068C550 /* _View.cpp */; };
+		32E5114F1E9444D300EC0122 /* ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E5114D1E9444D300EC0122 /* ViewController.cpp */; };
+		32E511681E9570AF00EC0122 /* DNAFrag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E511661E9570AF00EC0122 /* DNAFrag.cpp */; };
 		45F22639D7E34ECB88BF0104 /* _EventCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8A06F344A58417BB2A7CE18 /* _EventCenter.cpp */; };
-		BCDCF25D49404EB8BEB47DBB /* _DraggableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D4C51435F347D0B5E24FCC /* _DraggableView.cpp */; };
-		AA5526BE510248E3855D00D4 /* _DragAndDrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E436724BEC634E7FAB8382CF /* _DragAndDrop.cpp */; };
-		D048452B1D4949BCA3FAFFD5 /* ViewEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB8ADDF977A47739807F1B1 /* ViewEvents.h */; };
-		7433F32462634EE19C3FF147 /* ViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AA5D5F0212740A2A90CB7DC /* ViewController.h */; };
-		1305F95E6E5C454CB49B67DE /* View.h in Headers */ = {isa = PBXBuildFile; fileRef = 532A6C80049048318C5E4ECA /* View.h */; };
-		A4330EA4F78F4144AFB6A5BA /* VideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE7F0DEB950D46C48C4D9E03 /* VideoView.h */; };
-		090FDEC6615B4922903D33C0 /* TextView.h in Headers */ = {isa = PBXBuildFile; fileRef = EB27BB4E81E94A01AB5C0F21 /* TextView.h */; };
-		0DDCBF28260541159D1FA63B /* TextureFit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D556484988C40D8BA21242B /* TextureFit.h */; };
-		CA3A2C01C89A4E0290373557 /* ShapeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E5CA64FA9D34E9FA7B5875E /* ShapeView.h */; };
-		2FC33079CD334ECAA6B977CB /* Scene.h in Headers */ = {isa = PBXBuildFile; fileRef = 21ED0E0B943849F1B035C752 /* Scene.h */; };
-		13FBA164C8B442388141651F /* MatrixSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA06A6C134341C4A44243DF /* MatrixSet.h */; };
-		173831A3A24748BA9A401571 /* ImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 12DF6FF897644DEB8D1719DC /* ImageView.h */; };
-		6D76B50940A245449EFC6207 /* Events.h in Headers */ = {isa = PBXBuildFile; fileRef = 88C0B26DE0A84E9BB60A89D1 /* Events.h */; };
-		B7862F25BD474163B8916AB1 /* EventCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C5099CED806486FAEAB3710 /* EventCenter.h */; };
-		F89527D674A84CF39C297614 /* DraggableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D18CA85957534F0C8319A8A4 /* DraggableView.h */; };
-		3D667B6BFA81439AA4586548 /* DragAndDrop.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E37EB76D2084B07B5DEEEE8 /* DragAndDrop.h */; };
-		B85850B8178D4C2292905CA2 /* Equalizer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = B8A08BA327794D65A4DE84E5 /* Equalizer_Prefix.pch */; };
 		479C51861CA244C6B53F1066 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5E8277497B7446949D8D9254 /* CinderApp.icns */; };
-		9A15EC8373914201B31FC088 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 20996DAE7A0F49CEAFCA4348 /* Resources.h */; };
+		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		60FC3D1FF044403DB3E85E1F /* _ViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59F8A27E1D5E42149DCF6F15 /* _ViewController.cpp */; };
+		6842C051DD0543C2825DA760 /* _MatrixSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E36830D6494440069700C72F /* _MatrixSet.cpp */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		9567CDD6089A4E179DB7D113 /* _ShapeView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B631ED87D1BA4266B78380F6 /* _ShapeView.cpp */; };
+		AA5526BE510248E3855D00D4 /* _DragAndDrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E436724BEC634E7FAB8382CF /* _DragAndDrop.cpp */; };
+		B7220C08B856456E81E66797 /* _ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF0819D336434CF7A874A577 /* _ImageView.cpp */; };
+		BCDCF25D49404EB8BEB47DBB /* _DraggableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98D4C51435F347D0B5E24FCC /* _DraggableView.cpp */; };
+		BFAA6E57BEC8433EA132FC7C /* _TextView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD02C14CBA0C4822A8474FB3 /* _TextView.cpp */; };
+		EF31947948094FF2ACE02F7A /* _Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2926D4ED71B44CBB5E2F6A5 /* _Scene.cpp */; };
 		F7AEC04FD1B54723B6E9522E /* EqualizerApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12F1873CED3F44F4901DC771 /* EqualizerApp.cpp */; };
 /* End PBXBuildFile section */
 
@@ -60,40 +46,44 @@
 		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		12DF6FF897644DEB8D1719DC /* ImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ImageView.h; path = ../blocks/poScene/src/poScene/ImageView.h; sourceTree = "<group>"; };
+		12F1873CED3F44F4901DC771 /* EqualizerApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = EqualizerApp.cpp; path = ../src/EqualizerApp.cpp; sourceTree = "<group>"; };
+		1AA5D5F0212740A2A90CB7DC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../blocks/poScene/src/poScene/ViewController.h; sourceTree = "<group>"; };
+		1C5099CED806486FAEAB3710 /* EventCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EventCenter.h; path = ../blocks/poScene/src/poScene/EventCenter.h; sourceTree = "<group>"; };
+		20996DAE7A0F49CEAFCA4348 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		21ED0E0B943849F1B035C752 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = ../blocks/poScene/src/poScene/Scene.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2D556484988C40D8BA21242B /* TextureFit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureFit.h; path = ../blocks/poScene/src/poScene/TextureFit.h; sourceTree = "<group>"; };
+		2DA06A6C134341C4A44243DF /* MatrixSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MatrixSet.h; path = ../blocks/poScene/src/poScene/MatrixSet.h; sourceTree = "<group>"; };
+		2E37EB76D2084B07B5DEEEE8 /* DragAndDrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DragAndDrop.h; path = ../blocks/poScene/src/poScene/DragAndDrop.h; sourceTree = "<group>"; };
+		32E5114D1E9444D300EC0122 /* ViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ViewController.cpp; path = ../src/ViewController.cpp; sourceTree = "<group>"; };
+		32E5114E1E9444D300EC0122 /* ViewController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ViewController.hpp; path = ../src/ViewController.hpp; sourceTree = "<group>"; };
+		32E511661E9570AF00EC0122 /* DNAFrag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DNAFrag.cpp; path = ../src/DNAFrag.cpp; sourceTree = "<group>"; };
+		32E511671E9570AF00EC0122 /* DNAFrag.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DNAFrag.hpp; path = ../src/DNAFrag.hpp; sourceTree = "<group>"; };
+		3FD80ADDDD614D59B068C550 /* _View.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _View.cpp; path = ../blocks/poScene/src/poScene/_View.cpp; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		532A6C80049048318C5E4ECA /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = View.h; path = ../blocks/poScene/src/poScene/View.h; sourceTree = "<group>"; };
+		59F8A27E1D5E42149DCF6F15 /* _ViewController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _ViewController.cpp; path = ../blocks/poScene/src/poScene/_ViewController.cpp; sourceTree = "<group>"; };
+		5E5CA64FA9D34E9FA7B5875E /* ShapeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShapeView.h; path = ../blocks/poScene/src/poScene/ShapeView.h; sourceTree = "<group>"; };
+		5E8277497B7446949D8D9254 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		88C0B26DE0A84E9BB60A89D1 /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Events.h; path = ../blocks/poScene/src/poScene/Events.h; sourceTree = "<group>"; };
+		893301F89B5242C29D784A36 /* _Events.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _Events.cpp; path = ../blocks/poScene/src/poScene/_Events.cpp; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Equalizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equalizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		12F1873CED3F44F4901DC771 /* EqualizerApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/EqualizerApp.cpp; sourceTree = "<group>"; name = EqualizerApp.cpp; };
-		20996DAE7A0F49CEAFCA4348 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		5E8277497B7446949D8D9254 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		ACCE9C20B8C046C48A5E1BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		B8A08BA327794D65A4DE84E5 /* Equalizer_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = Equalizer_Prefix.pch; sourceTree = "<group>"; name = Equalizer_Prefix.pch; };
-		2E37EB76D2084B07B5DEEEE8 /* DragAndDrop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/DragAndDrop.h; sourceTree = "<group>"; name = DragAndDrop.h; };
-		D18CA85957534F0C8319A8A4 /* DraggableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/DraggableView.h; sourceTree = "<group>"; name = DraggableView.h; };
-		1C5099CED806486FAEAB3710 /* EventCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/EventCenter.h; sourceTree = "<group>"; name = EventCenter.h; };
-		88C0B26DE0A84E9BB60A89D1 /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/Events.h; sourceTree = "<group>"; name = Events.h; };
-		12DF6FF897644DEB8D1719DC /* ImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/ImageView.h; sourceTree = "<group>"; name = ImageView.h; };
-		2DA06A6C134341C4A44243DF /* MatrixSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/MatrixSet.h; sourceTree = "<group>"; name = MatrixSet.h; };
-		21ED0E0B943849F1B035C752 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/Scene.h; sourceTree = "<group>"; name = Scene.h; };
-		5E5CA64FA9D34E9FA7B5875E /* ShapeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/ShapeView.h; sourceTree = "<group>"; name = ShapeView.h; };
-		2D556484988C40D8BA21242B /* TextureFit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/TextureFit.h; sourceTree = "<group>"; name = TextureFit.h; };
-		EB27BB4E81E94A01AB5C0F21 /* TextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/TextView.h; sourceTree = "<group>"; name = TextView.h; };
-		FE7F0DEB950D46C48C4D9E03 /* VideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/VideoView.h; sourceTree = "<group>"; name = VideoView.h; };
-		532A6C80049048318C5E4ECA /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/View.h; sourceTree = "<group>"; name = View.h; };
-		1AA5D5F0212740A2A90CB7DC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/ViewController.h; sourceTree = "<group>"; name = ViewController.h; };
-		FAB8ADDF977A47739807F1B1 /* ViewEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../blocks/poScene/src/poScene/ViewEvents.h; sourceTree = "<group>"; name = ViewEvents.h; };
-		E436724BEC634E7FAB8382CF /* _DragAndDrop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_DragAndDrop.cpp; sourceTree = "<group>"; name = _DragAndDrop.cpp; };
-		98D4C51435F347D0B5E24FCC /* _DraggableView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_DraggableView.cpp; sourceTree = "<group>"; name = _DraggableView.cpp; };
-		C8A06F344A58417BB2A7CE18 /* _EventCenter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_EventCenter.cpp; sourceTree = "<group>"; name = _EventCenter.cpp; };
-		893301F89B5242C29D784A36 /* _Events.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_Events.cpp; sourceTree = "<group>"; name = _Events.cpp; };
-		DF0819D336434CF7A874A577 /* _ImageView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_ImageView.cpp; sourceTree = "<group>"; name = _ImageView.cpp; };
-		E36830D6494440069700C72F /* _MatrixSet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_MatrixSet.cpp; sourceTree = "<group>"; name = _MatrixSet.cpp; };
-		C2926D4ED71B44CBB5E2F6A5 /* _Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_Scene.cpp; sourceTree = "<group>"; name = _Scene.cpp; };
-		B631ED87D1BA4266B78380F6 /* _ShapeView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_ShapeView.cpp; sourceTree = "<group>"; name = _ShapeView.cpp; };
-		AD02C14CBA0C4822A8474FB3 /* _TextView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_TextView.cpp; sourceTree = "<group>"; name = _TextView.cpp; };
-		3FD80ADDDD614D59B068C550 /* _View.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_View.cpp; sourceTree = "<group>"; name = _View.cpp; };
-		59F8A27E1D5E42149DCF6F15 /* _ViewController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../blocks/poScene/src/poScene/_ViewController.cpp; sourceTree = "<group>"; name = _ViewController.cpp; };
+		98D4C51435F347D0B5E24FCC /* _DraggableView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _DraggableView.cpp; path = ../blocks/poScene/src/poScene/_DraggableView.cpp; sourceTree = "<group>"; };
+		ACCE9C20B8C046C48A5E1BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD02C14CBA0C4822A8474FB3 /* _TextView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _TextView.cpp; path = ../blocks/poScene/src/poScene/_TextView.cpp; sourceTree = "<group>"; };
+		B631ED87D1BA4266B78380F6 /* _ShapeView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _ShapeView.cpp; path = ../blocks/poScene/src/poScene/_ShapeView.cpp; sourceTree = "<group>"; };
+		B8A08BA327794D65A4DE84E5 /* Equalizer_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = Equalizer_Prefix.pch; sourceTree = "<group>"; };
+		C2926D4ED71B44CBB5E2F6A5 /* _Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _Scene.cpp; path = ../blocks/poScene/src/poScene/_Scene.cpp; sourceTree = "<group>"; };
+		C8A06F344A58417BB2A7CE18 /* _EventCenter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _EventCenter.cpp; path = ../blocks/poScene/src/poScene/_EventCenter.cpp; sourceTree = "<group>"; };
+		D18CA85957534F0C8319A8A4 /* DraggableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DraggableView.h; path = ../blocks/poScene/src/poScene/DraggableView.h; sourceTree = "<group>"; };
+		DF0819D336434CF7A874A577 /* _ImageView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _ImageView.cpp; path = ../blocks/poScene/src/poScene/_ImageView.cpp; sourceTree = "<group>"; };
+		E36830D6494440069700C72F /* _MatrixSet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _MatrixSet.cpp; path = ../blocks/poScene/src/poScene/_MatrixSet.cpp; sourceTree = "<group>"; };
+		E436724BEC634E7FAB8382CF /* _DragAndDrop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = _DragAndDrop.cpp; path = ../blocks/poScene/src/poScene/_DragAndDrop.cpp; sourceTree = "<group>"; };
+		EB27BB4E81E94A01AB5C0F21 /* TextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextView.h; path = ../blocks/poScene/src/poScene/TextView.h; sourceTree = "<group>"; };
+		FAB8ADDF977A47739807F1B1 /* ViewEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewEvents.h; path = ../blocks/poScene/src/poScene/ViewEvents.h; sourceTree = "<group>"; };
+		FE7F0DEB950D46C48C4D9E03 /* VideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoView.h; path = ../blocks/poScene/src/poScene/VideoView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +108,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				642421324EF843E196B42E7E /* poScene */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				32E511661E9570AF00EC0122 /* DNAFrag.cpp */,
+				32E511671E9570AF00EC0122 /* DNAFrag.hpp */,
 				12F1873CED3F44F4901DC771 /* EqualizerApp.cpp */,
+				32E5114D1E9444D300EC0122 /* ViewController.cpp */,
+				32E5114E1E9444D300EC0122 /* ViewController.hpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -174,6 +176,33 @@
 			name = Equalizer;
 			sourceTree = "<group>";
 		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				20996DAE7A0F49CEAFCA4348 /* Resources.h */,
+				B8A08BA327794D65A4DE84E5 /* Equalizer_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E8277497B7446949D8D9254 /* CinderApp.icns */,
+				ACCE9C20B8C046C48A5E1BAB /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		32D81C67A1744967ABD173C7 /* poScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,14 +235,6 @@
 			name = poScene;
 			sourceTree = "<group>";
 		};
-		A73140B314ED4EA4BE69BBA2 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				32D81C67A1744967ABD173C7 /* poScene */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
 		642421324EF843E196B42E7E /* poScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,39 +243,12 @@
 			name = poScene;
 			sourceTree = "<group>";
 		};
-		01B97315FEAEA392516A2CEA /* Blocks */ = {
+		A73140B314ED4EA4BE69BBA2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				642421324EF843E196B42E7E /* poScene */,
+				32D81C67A1744967ABD173C7 /* poScene */,
 			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				20996DAE7A0F49CEAFCA4348 /* Resources.h */,
-				B8A08BA327794D65A4DE84E5 /* Equalizer_Prefix.pch */,
-			);
-			name = Headers;
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5E8277497B7446949D8D9254 /* CinderApp.icns */,
-				ACCE9C20B8C046C48A5E1BAB /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-			);
-			name = Frameworks;
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +277,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Equalizer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -323,11 +319,13 @@
 				BCDCF25D49404EB8BEB47DBB /* _DraggableView.cpp in Sources */,
 				45F22639D7E34ECB88BF0104 /* _EventCenter.cpp in Sources */,
 				11D80846B4DD4083AC44E78E /* _Events.cpp in Sources */,
+				32E5114F1E9444D300EC0122 /* ViewController.cpp in Sources */,
 				B7220C08B856456E81E66797 /* _ImageView.cpp in Sources */,
 				6842C051DD0543C2825DA760 /* _MatrixSet.cpp in Sources */,
 				EF31947948094FF2ACE02F7A /* _Scene.cpp in Sources */,
 				9567CDD6089A4E179DB7D113 /* _ShapeView.cpp in Sources */,
 				BFAA6E57BEC8433EA132FC7C /* _TextView.cpp in Sources */,
+				32E511681E9570AF00EC0122 /* DNAFrag.cpp in Sources */,
 				1A6693137D6A4CDCA0FEF587 /* _View.cpp in Sources */,
 				60FC3D1FF044403DB3E85E1F /* _ViewController.cpp in Sources */,
 			);
@@ -340,17 +338,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Equalizer_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Equalizer_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -372,12 +370,12 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Equalizer_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Equalizer_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -394,7 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../Cinder";
+				CINDER_PATH = ../../Cinder;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				ENABLE_TESTABILITY = YES;
@@ -404,10 +402,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					../blocks/poScene/src,
-				);
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../blocks/poScene/src";
 			};
 			name = Debug;
 		};
@@ -415,7 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../Cinder";
+				CINDER_PATH = ../../Cinder;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -423,10 +418,7 @@
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					../blocks/poScene/src,
-				);
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../blocks/poScene/src";
 			};
 			name = Release;
 		};
