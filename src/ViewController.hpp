@@ -53,6 +53,8 @@ namespace equalizer{
         void randomizeByTween();
         void randomizeColors();
         void centerLine();
+        void gridify();
+        void horiz();
         
         float screenWidth;
         float screenHeight;

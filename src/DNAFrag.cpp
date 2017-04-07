@@ -40,8 +40,8 @@ namespace equalizer{
         
     }
     
-    void DNAFrag::tweenColor(float _color, float _time){
-        ci::app::timeline().appendTo( &grayVal, _color, _time, ci::EaseInOutCubic());
+    void DNAFrag::tweenColor(float _color, float _duration){
+        ci::app::timeline().appendTo( &grayVal, _color, _duration, ci::EaseInOutCubic());
 
     }
 
@@ -53,8 +53,9 @@ namespace equalizer{
             useTimeline = true;
         }
         
-       // color = ci::Color(grayVal, grayVal, grayVal);
+        color = ci::Color(grayVal, grayVal, grayVal);
         size.y = height;
+        size.x = width;
 
 
         
@@ -80,9 +81,14 @@ namespace equalizer{
         setDestinations();
     }
     
-    void DNAFrag::tweenHeight(float _height, float _speed){
+    void DNAFrag::tweenHeight(float _height, float _duration){
          useTimeline = true;
-        ci::app::timeline().appendTo ( &height, _height, _speed, ci::EaseInOutCubic());
+        ci::app::timeline().appendTo ( &height, _height, _duration, ci::EaseInOutCubic());
+        
+    }
+    void DNAFrag::tweenWidth(float _width, float _duration){
+        useTimeline = true;
+        ci::app::timeline().appendTo ( &width, _width, _duration, ci::EaseInOutCubic());
         
     }
     

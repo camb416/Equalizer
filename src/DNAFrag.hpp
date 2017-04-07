@@ -41,11 +41,14 @@ public:
     
     void setDestinations();
     
-    void tweenColor(float _color, float _time);
-    void tweenHeight(float _height, float _speed);
+    void tweenColor(float _color, float _duration);
+    void tweenHeight(float _height, float _duration);
+    void tweenWidth(float _width, float _duration);
    
     
     void setColor(ci::Color _c);
+    
+    ci::vec2 getPos(){ return pos; };
 
     
 
@@ -60,6 +63,7 @@ private:
     
     ci::Anim<float> grayVal;
     ci::Anim<float> height;
+    ci::Anim<float> width;
     ci::Color color;
     
     ci::vec2 size;
