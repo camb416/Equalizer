@@ -35,9 +35,14 @@ namespace equalizer{
     }
     
     void DNAFrag::setColor(ci::Color _c){
-        
+        grayVal.stop();
         color = _c;
         
+    }
+    void DNAFrag::setColor(float _gray){
+        grayVal.stop();
+        grayVal = _gray;
+        color = ci::Color(_gray, _gray, _gray);
     }
     
     void DNAFrag::tweenColor(float _color, float _duration){

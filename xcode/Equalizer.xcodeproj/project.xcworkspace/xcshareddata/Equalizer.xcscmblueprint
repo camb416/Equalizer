@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BBBAD075F37DB39D5F041FE7893B4F3A3ABE4733",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BBBAD075F37DB39D5F041FE7893B4F3A3ABE4733" : 9223372036854775807,
+    "5512B2398E14EB5C755207FEFA9FA09ACEA57483" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "737D5022-D8A8-47FF-962F-329D35C78295",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BBBAD075F37DB39D5F041FE7893B4F3A3ABE4733" : "Equalizer\/",
+    "5512B2398E14EB5C755207FEFA9FA09ACEA57483" : "Equalizer\/blocks\/poScene\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Equalizer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "xcode\/Equalizer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git:\/\/github.com\/Potion\/Cinder-poScene.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5512B2398E14EB5C755207FEFA9FA09ACEA57483"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:camb416\/Equalizer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BBBAD075F37DB39D5F041FE7893B4F3A3ABE4733"
+    }
+  ]
+}

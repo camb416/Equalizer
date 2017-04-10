@@ -120,10 +120,23 @@ namespace equalizer{
         }
     }
     
+    void ViewController::stopTweens(){
+        for(int j = 0; j< numDNACols; j++){
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef f = dnaFrags.at(j).at(i);
+                f->setHeight( 5.0f);
+            }
+        }
+    
+    }
+    
     void ViewController::keyPressed(ci::app::KeyEvent &key){
         CI_LOG_V(key.getChar());
         
         switch(key.getChar()){
+                case '1':
+                stopTweens();
+                break;
                 case 'o':
                 case 'O':
                 returnToOrigins();
@@ -160,11 +173,65 @@ namespace equalizer{
                 case 'H':
                 horiz();
                 break;
+                case 'p':
+                case 'P':
+                noise();
+                break;
+                case 'd':
+                case 'D':
+                scrollDown();
             default:
                 
                 break;
         }
         
+    }
+    
+    void ViewController::scrollDown(){
+        
+        
+        
+        for(int j = 0; j< numDNACols; j++){
+            
+            vector<float> buffHeights;
+            vector<float> buffColors;
+            
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef d = dnaFrags.at(j).at(i);
+                buffHeights.push_back(d->getHeight());
+                buffColors.push_back(d->getColor());
+            }
+            
+            dnaFrags.at(j).at(0)->setHeight(buffHeights.at(numDNARows-1));
+            dnaFrags.at(j).at(0)->setColor(buffColors.at(numDNARows-1));
+            for(int i=1;i<numDNARows;i++){
+                DNAFragRef d = dnaFrags.at(j).at(i);
+                DNAFragRef d2 = dnaFrags.at(j).at(i-1);
+                d->setHeight(buffHeights[i-1]);
+                d->setColor(buffColors[i-1]);
+                
+            }
+            buffHeights.clear();
+            buffColors.clear();
+        }
+    }
+    
+    void ViewController::noise(){
+        
+        for(int j = 0; j< numDNACols; j++){
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef d = dnaFrags.at(j).at(i);
+
+               // float p = mPerlin.fBm(ci::vec3(1.0f,1.0f,1.0f));
+                
+                float p = mPerlin.noise(ci::vec3((float)i*1.0f,
+                                               (float)j*1.0f,
+                                      (float)ci::app::getElapsedSeconds()*2.0f)) /2.0f+0.5f;
+           
+                d->tweenColor(p, 0.5f);
+                d->tweenHeight((1.0f-p)*maxFragHeight, 0.5f);
+            }
+        }
     }
     
     void ViewController::setup(){
