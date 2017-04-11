@@ -112,6 +112,22 @@ namespace equalizer{
         
     }
     
+    void DNAFrag::linearTweenPos(float _newY, float _numSeconds){
+        // do a tween
+        useTimeline = true;
+        tweenedY = pos.y;
+        // color = ci::Color(1,0,0);
+        ci::app::timeline().appendTo ( &tweenedY, _newY, _numSeconds, ci::EaseNone()).finishFn( std::bind( &DNAFrag::turnOffTimeline,this ));
+        
+        // another way to do this:
+        //       ci::app::timeline().apply ( &tweenedY, _newY, 3.0f, ci::EaseInOutCubic()).finishFn(  [&]() {
+        //            // Do something in this lambda function. Example: just quit.
+        //           turnOffTimeline();
+        //       });
+        
+    }
+    
+    
     
     
     void DNAFrag::draw(){

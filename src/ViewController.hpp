@@ -40,6 +40,8 @@ namespace equalizer{
         
         std::vector<std::vector<DNAFragRef>> dnaFrags;
         
+        
+        
          int numDNACols;
          int numDNARows;
          int numDNAFrags;
@@ -56,6 +58,7 @@ namespace equalizer{
         void gridify();
         void horiz();
         void noise();
+        void resetWidths();
         
         float screenWidth;
         float screenHeight;
@@ -66,12 +69,18 @@ namespace equalizer{
         float minFragHeight;
         
         void scrollDown();
+        void noiseDown();
+        
+        void rain();
         
         void stopTweens();
         
         
+        int animState;
         
+        float mTime;
         
+        void setPreset(int which);
         
     protected:
         ViewController();

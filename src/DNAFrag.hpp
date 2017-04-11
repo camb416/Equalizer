@@ -30,16 +30,26 @@ public:
     void update();
     void setup();
     void setHeight(float _h){ height.stop(); height = _h; };
-    void setWidth(float _w){ dSize.x = _w; };
-    void setPos(ci::vec2 _pos, bool isOrigin = false){ dPos = _pos; if(isOrigin) pos = oPos = dPos;};
-    void setPos(float _vPos){dPos.y = _vPos;};
+    void setWidth(float _w){ dSize.x = size.x = width = _w; };
+    void setPos(ci::vec2 _pos, bool isOrigin = false){
+        tweenedY.stop();
+        dPos = _pos;
+        if(isOrigin) pos = oPos = dPos;
+    };
+    void setPos(float _vPos, bool isOrigin = false){
+        tweenedY.stop();
+        dPos.y = _vPos;
+        tweenedY = _vPos;
+        if(isOrigin) pos = oPos = dPos;
+    };
     void setSize(ci::vec2 _size, bool isOrigin = false){ dSize = _size; if(isOrigin) size = oSize = dSize; };
     void returnHome(){dPos = oPos;};
     
-    float getHeight(){ return height;};
+    float getHeight(){ return size.y;};
     float getColor(){ return grayVal;};
     
     void tweenPos(float _newY, float _numSeconds = 3.0f);
+    void linearTweenPos(float _newY, float _numSeconds = 3.0f);
     void turnOffTimeline();
     
     void setDestinations();

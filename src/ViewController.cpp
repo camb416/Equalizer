@@ -63,6 +63,7 @@ namespace equalizer{
             for(int i=0;i<numDNARows;i++){
                 DNAFragRef f = dnaFrags.at(j).at(i);
                 f->returnHome();
+                f->setWidth(fragWidth);
             }
         }
     }
@@ -80,7 +81,7 @@ namespace equalizer{
         for(int j = 0; j< numDNACols; j++){
             for(int i=0;i<numDNARows;i++){
                 DNAFragRef f = dnaFrags.at(j).at(i);
-                f->tweenColor(ci::randFloat(), ci::randFloat(0.5f)+1.0f);
+               f->tweenColor(ci::randFloat(), ci::randFloat(0.5f)+1.0f);
                        
             }
         }
@@ -88,8 +89,8 @@ namespace equalizer{
     
     void ViewController::gridify(){
         
-       columnGutter = 8;
-    fragWidth = (screenWidth-((numDNACols+1)*columnGutter))/numDNACols;
+      float newColumnGutter = columnGutter;
+    float newFragWidth = (screenWidth-((numDNACols+1)*newColumnGutter))/numDNACols;
 
         
         for(int j = 0; j< numDNACols; j++){
@@ -100,7 +101,7 @@ namespace equalizer{
                 float fragHeight = (screenHeight - (columnGutter * (numDNARows+1)))/numDNARows;
                 
                 f->tweenHeight(fragHeight, ci::randFloat(1.0f)+0.5f);
-                f->tweenWidth(fragWidth, ci::randFloat(1.0f) + 0.5f);
+                f->tweenWidth(newFragWidth, ci::randFloat(1.0f) + 0.5f);
                 
                 
                 f->tweenPos(i*(fragHeight+columnGutter)+columnGutter + fragHeight/2.0f,tweenLength);
@@ -119,6 +120,15 @@ namespace equalizer{
             }
         }
     }
+    void ViewController::resetWidths(){
+        for(int j = 0; j< numDNACols; j++){
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef f = dnaFrags.at(j).at(i);
+                f->setWidth(fragWidth);
+            }
+        }
+
+    }
     
     void ViewController::stopTweens(){
         for(int j = 0; j< numDNACols; j++){
@@ -134,15 +144,16 @@ namespace equalizer{
         CI_LOG_V(key.getChar());
         
         switch(key.getChar()){
-                case '1':
+                case 'x':
+                case 'X':
                 stopTweens();
                 break;
                 case 'o':
                 case 'O':
                 returnToOrigins();
                 break;
-                case 'r':
-                case 'R':
+                case 'f':
+                case 'F':
                 randomizePositions();
                 break;
                 case 's':
@@ -180,6 +191,31 @@ namespace equalizer{
                 case 'd':
                 case 'D':
                 scrollDown();
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                animState = key.getCode() - 48;
+                break;
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                setPreset(key.getCode()-48-5);
+                break;
+                case '[':
+                setPreset(5);
+                break;
+                case 'r':
+                case 'R':
+                rain();
+                break;
+                case 'w':
+                case 'W':
+                resetWidths();
+                break;
             default:
                 
                 break;
@@ -216,29 +252,88 @@ namespace equalizer{
         }
     }
     
-    void ViewController::noise(){
+    void ViewController::rain(){
         
+        
+//        for(int j = 0; j< numDNACols; j++){
+//            for(int i=0;i<numDNARows;i++){
+//                DNAFragRef d = dnaFrags.at(j).at(i);
+//                
+//                float r = ci::randFloat();
+//                float randHeight = r*(maxFragHeight - minFragHeight) + minFragHeight;
+//                
+//                d->setWidth(fragWidth);
+//                d->setColor(1.0f - r); // 0 to 1
+//                d->setHeight(randHeight);
+//                //d->setPos(ci::randFloat()*30.0f  - 30.0f, true);
+//                //d->tweenPos(ci::randFloat()*30.0f + screenHeight, r*2.0f + 0.5f);
+//                d->linearTweenPos(ci::randFloat()*30.0f + screenHeight, r*2.0f + 0.5f);
+//            }
+//        }
+
+        for(int j = 0; j< numDNACols; j++){
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef d = dnaFrags.at(j).at(i);
+                
+
+                
+                d->setWidth(fragWidth);
+                d->setPos(d->getPos().y + d->getHeight() / (i+5), true);
+                if(d->getPos().y > screenHeight + 30){
+                    d->setPos(-30.0f, true);
+                }
+
+            }
+        }
+        
+        
+    }
+    
+    void ViewController::noiseDown(){
+        CI_LOG_V("noise");
+        for(int j = 0; j< numDNACols; j++){
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef d = dnaFrags.at(j).at(i);
+                
+                // float p = mPerlin.fBm(ci::vec3(1.0f,1.0f,1.0f));
+                float freq = 0.1f;
+                float tFreq = 0.5f;
+                ci::vec2 noiseParam = ci::vec2(d->getPos().x*freq - mTime*tFreq,d->getPos().y*freq);
+                
+                float p = mPerlin.fBm(noiseParam) +0.5f;
+                
+                d->setColor(p);
+                //d->setHeight((1.0f-p)*maxFragHeight);
+            }
+        }
+
+    }
+    
+    void ViewController::noise(){
+CI_LOG_V("noise");
         for(int j = 0; j< numDNACols; j++){
             for(int i=0;i<numDNARows;i++){
                 DNAFragRef d = dnaFrags.at(j).at(i);
 
                // float p = mPerlin.fBm(ci::vec3(1.0f,1.0f,1.0f));
+                float freq = 0.1f;
+                ci::vec3 noiseParam = ci::vec3(d->getPos().x*freq,d->getPos().y*freq, mTime);
                 
-                float p = mPerlin.noise(ci::vec3((float)i*1.0f,
-                                               (float)j*1.0f,
-                                      (float)ci::app::getElapsedSeconds()*2.0f)) /2.0f+0.5f;
+                float p = mPerlin.fBm(noiseParam) /2.0f+0.5f;
            
-                d->tweenColor(p, 0.5f);
-                d->tweenHeight((1.0f-p)*maxFragHeight, 0.5f);
+                d->setColor(p);
+                d->setHeight((1.0f-p)*maxFragHeight);
             }
         }
     }
     
     void ViewController::setup(){
         
-        mOctaves = 4;
-        mSeed = clock();
-        mPerlin = ci::Perlin(mOctaves, mSeed);
+        animState = 0;
+        
+        mOctaves = 8;
+       mSeed = clock();
+//        mPerlin = ci::Perlin(mOctaves, mSeed);
         
       ci::app::getWindow()->getSignalKeyDown().connect(std::bind(&ViewController::keyPressed, this, std::placeholders::_1));
         
@@ -261,7 +356,7 @@ namespace equalizer{
         numDNAFrags = numDNARows * numDNACols;
         
      
-        
+   
         for(int j = 0; j< numDNACols; j++){
             std::vector<DNAFragRef> col;
             for(int i=0;i<numDNARows;i++){
@@ -296,7 +391,7 @@ namespace equalizer{
         }
        
         // randomizePositions();
-        gridify();
+     
     }
     
     void ViewController::horiz(){
@@ -312,21 +407,85 @@ namespace equalizer{
 
     }
     void ViewController::update(){
+        
+        mTime = ci::app::getElapsedSeconds();
+        
+        switch(animState){
+            case 0:
+                // normal
+                break;
+            case 1:
+                scrollDown();
+                break;
+            case 2:
+                noise();
+                break;
+            case 3:
+                noiseDown();
+                break;
+            case 4:
+                rain();
+                break;
+            default:
+                animState = 0;
+                break;
+        }
         for(int j = 0; j< numDNACols; j++){
 
             for(int i=0;i<numDNARows;i++){
                 DNAFragRef f = dnaFrags.at(j).at(i);
 
-      //  CI_LOG_V("ViewController::update()");
-//        float nX = (float)j * 0.1f;
-//        float nY = (float)i * 0.1f;
-//        float nZ = (float)ci::app::getElapsedSeconds() * 1.0f;
-//        ci::vec3 v( nX, nY, nZ );
-//        float noise = mPerlin.fBm( v );
-//         //       CI_LOG_V(noise);
-//        f->setColor(ci::Color(noise,noise,noise));
+                
             }
         }
     }
+    
+    void ViewController::setPreset(int which){
+        
+
+        
+
+
+                for(int j = 0; j< numDNACols; j++){
+                    for(int i=0;i<numDNARows;i++){
+                    DNAFragRef f = dnaFrags.at(j).at(i);
+                        float yPos, xPos, yScale;
+                        ci::vec2 pos;
+                        switch(which){
+                            case 0:
+                                yScale = 0.0f;
+                                f->tweenHeight(0.0f, 0.5f);
+                                break;
+                            case 1:
+                                yScale = maxFragHeight;
+                                f->tweenHeight(maxFragHeight, 0.5f);
+                                break;
+                            case 2:
+                                yPos = f->getPos().y;
+                                yScale = sin(yPos/screenHeight*M_PI)*maxFragHeight;
+                                f->tweenHeight(yScale, 0.5f);
+                                break;
+                            case 3:
+                                xPos = f->getPos().x;
+                                yScale = sin(xPos/screenWidth*M_PI)*maxFragHeight;
+                                f->tweenHeight(yScale, 0.5f);
+                                break;
+                            case 4:
+                                pos = f->getPos();
+                                yScale = sin(pos.y/screenHeight*M_PI+pos.x/2.0f)*12.5f;
+                                f->tweenHeight(yScale, 0.5f);
+                                break;
+                            case 5:
+                                pos = f->getPos();
+                                yScale = sin(pos.y/screenHeight*M_PI-pos.x/16.0f)*12.5f;
+                                f->tweenHeight(yScale, 0.5f);
+                            break;
+                        }
+                        f->tweenColor((yScale-minFragHeight)/(maxFragHeight-minFragHeight),0.5f);
+
+                    }
+                }
+        }
+    
     
 }
