@@ -67,13 +67,19 @@ namespace equalizer{
         
         float maxFragHeight;
         float minFragHeight;
+        float fragHeightDelta;
+        
         
         void scrollDown();
         void noiseDown();
         
         void rain();
         
+        void wind();
+        
         void stopTweens();
+        
+        void tweenToFullBleed();
         
         
         int animState;

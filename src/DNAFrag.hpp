@@ -29,7 +29,9 @@ public:
     void draw();
     void update();
     void setup();
-    void setHeight(float _h){ height.stop(); height = _h; };
+    void setHeight(float _h){
+        height.stop();
+        height = size.y = _h; };
     void setWidth(float _w){ dSize.x = size.x = width = _w; };
     void setPos(ci::vec2 _pos, bool isOrigin = false){
         tweenedY.stop();

@@ -140,10 +140,44 @@ namespace equalizer{
     
     }
     
+    void ViewController::tweenToFullBleed(){
+        // tween to full bleed
+        // 1) tween color to black
+        // 2) tween size to maxheight
+        // 3) tween width to full width (no gutters)
+        // 4) tween position to grid
+        
+        float newColumnGutter = 0;
+        float newFragWidth = (screenWidth-((numDNACols+1)*newColumnGutter))/numDNACols;
+        
+        
+        for(int j = 0; j< numDNACols; j++){
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef f = dnaFrags.at(j).at(i);
+                float tweenLength = ci::randFloat(2.5f) + 0.5f;
+                
+                float newFragHeight = screenHeight/numDNARows;
+                
+                f->tweenHeight(newFragHeight+2.0f, ci::randFloat(2.5f)+0.5f);
+                f->tweenWidth(newFragWidth+2.0f, ci::randFloat(2.5f) + 0.5f);
+                
+                  f->tweenColor(0,ci::randFloat() + 1.0f);
+                f->tweenPos(i*(newFragHeight)+columnGutter + newFragHeight/2.0f,ci::randFloat(2.5f)+0.5f);
+            }
+        }
+
+        
+        
+    }
+    
     void ViewController::keyPressed(ci::app::KeyEvent &key){
         CI_LOG_V(key.getChar());
         
         switch(key.getChar()){
+                case 'm':
+                case 'M':
+                tweenToFullBleed();
+                break;
                 case 'x':
                 case 'X':
                 stopTweens();
@@ -196,9 +230,10 @@ namespace equalizer{
                 case '2':
                 case '3':
                 case '4':
+                case '5':
                 animState = key.getCode() - 48;
                 break;
-                case '5':
+
                 case '6':
                 case '7':
                 case '8':
@@ -215,6 +250,10 @@ namespace equalizer{
                 case 'w':
                 case 'W':
                 resetWidths();
+                break;
+                case 'i':
+                case 'I':
+                animState = 5;
                 break;
             default:
                 
@@ -249,6 +288,47 @@ namespace equalizer{
             }
             buffHeights.clear();
             buffColors.clear();
+        }
+    }
+    
+    void ViewController::wind(){
+        
+        if(ci::app::getElapsedFrames()  % 4 == 0){
+        
+        std::vector<std::vector<float>> dnaFragHeightBuff;
+            std::vector<std::vector<float>> dnaFragColorBuff;
+        for(int j = 0; j< numDNACols; j++){
+            std::vector<float> colh;
+            std::vector<float> colc;
+            for(int i=0;i<numDNARows;i++){
+                colh.push_back(dnaFrags.at(j).at(i)->getHeight());
+                colc.push_back(dnaFrags.at(j).at(i)->getColor());
+            }
+            dnaFragHeightBuff.push_back(colh);
+            dnaFragColorBuff.push_back(colc);
+        }
+        
+        for(int j = 0; j< numDNACols; j++){
+            for(int i=0;i<numDNARows;i++){
+                DNAFragRef d = dnaFrags.at(j).at(i);
+                float d2h;
+                float d2c;
+                if(j<numDNACols-1){
+                    d2h  = dnaFragHeightBuff.at(j+1).at(i);
+                    d2c = dnaFragColorBuff.at(j+1).at(i);
+                } else {
+                    d2h  = dnaFragHeightBuff.at(0).at(i);
+                    d2c = dnaFragColorBuff.at(0).at(i);
+                }
+                d->setHeight(d2h);
+                d->setColor(d2c);
+                
+                
+            }
+        }
+
+        dnaFragHeightBuff.clear();
+            dnaFragColorBuff.clear();
         }
     }
     
@@ -290,7 +370,7 @@ namespace equalizer{
     }
     
     void ViewController::noiseDown(){
-        CI_LOG_V("noise");
+        CI_LOG_V("noisedown");
         for(int j = 0; j< numDNACols; j++){
             for(int i=0;i<numDNARows;i++){
                 DNAFragRef d = dnaFrags.at(j).at(i);
@@ -298,10 +378,14 @@ namespace equalizer{
                 // float p = mPerlin.fBm(ci::vec3(1.0f,1.0f,1.0f));
                 float freq = 0.1f;
                 float tFreq = 0.5f;
-                ci::vec2 noiseParam = ci::vec2(d->getPos().x*freq - mTime*tFreq,d->getPos().y*freq);
+                // ci::vec2 noiseParam = ci::vec2(d->getPos().x - mTime
+                //                              ,d->getPos().y);
+                float x_in = j + mTime;
+                float y_in = i + 0.5f;
+                ci::vec3 noiseParam = ci::vec3(x_in, y_in, 1.0f);
                 
-                float p = mPerlin.fBm(noiseParam) +0.5f;
-                
+                float p = ci::lmap(mPerlin.fBm(noiseParam), -0.5f, 0.5f, 0.0f, 1.0f);
+               // (p > 0) ? p = 1.0f : p = 0.0f;
                 d->setColor(p);
                 //d->setHeight((1.0f-p)*maxFragHeight);
             }
@@ -310,7 +394,8 @@ namespace equalizer{
     }
     
     void ViewController::noise(){
-CI_LOG_V("noise");
+        float min = 99999;
+        float max = -99999;
         for(int j = 0; j< numDNACols; j++){
             for(int i=0;i<numDNARows;i++){
                 DNAFragRef d = dnaFrags.at(j).at(i);
@@ -319,21 +404,29 @@ CI_LOG_V("noise");
                 float freq = 0.1f;
                 ci::vec3 noiseParam = ci::vec3(d->getPos().x*freq,d->getPos().y*freq, mTime);
                 
-                float p = mPerlin.fBm(noiseParam) /2.0f+0.5f;
+                float p = mPerlin.noise(noiseParam);
+                
+                p = p/1.5f+0.75f;
+                
+                if(p>max) max = p;
+                if(p<min) min = p;
            
                 d->setColor(p);
                 d->setHeight((1.0f-p)*maxFragHeight);
             }
         }
+        std:: ostringstream ss;
+        ss << min << ", " << max;
+        CI_LOG_V(ss.str());
     }
     
     void ViewController::setup(){
         
         animState = 0;
         
-        mOctaves = 8;
-       mSeed = clock();
-//        mPerlin = ci::Perlin(mOctaves, mSeed);
+        mOctaves = 4;
+      // mSeed = clock();
+       mPerlin = ci::Perlin(mOctaves, mSeed);
         
       ci::app::getWindow()->getSignalKeyDown().connect(std::bind(&ViewController::keyPressed, this, std::placeholders::_1));
         
@@ -341,6 +434,7 @@ CI_LOG_V("noise");
       screenHeight = 215;
         maxFragHeight = screenHeight/8;
        minFragHeight = 5;
+        fragHeightDelta = maxFragHeight-minFragHeight;
         
 
         
@@ -426,6 +520,9 @@ CI_LOG_V("noise");
             case 4:
                 rain();
                 break;
+            case 5:
+                wind();
+                break;
             default:
                 animState = 0;
                 break;
@@ -462,26 +559,26 @@ CI_LOG_V("noise");
                                 break;
                             case 2:
                                 yPos = f->getPos().y;
-                                yScale = sin(yPos/screenHeight*M_PI)*maxFragHeight;
+                                yScale = sin(yPos/screenHeight*M_PI)*fragHeightDelta + minFragHeight;
                                 f->tweenHeight(yScale, 0.5f);
                                 break;
                             case 3:
                                 xPos = f->getPos().x;
-                                yScale = sin(xPos/screenWidth*M_PI)*maxFragHeight;
+                                yScale = sin(xPos/screenWidth*M_PI)*fragHeightDelta + minFragHeight;
                                 f->tweenHeight(yScale, 0.5f);
                                 break;
                             case 4:
                                 pos = f->getPos();
-                                yScale = sin(pos.y/screenHeight*M_PI+pos.x/2.0f)*12.5f;
+                                yScale = sin(pos.y/screenHeight*M_PI+pos.x/2.0f)*fragHeightDelta + minFragHeight;
                                 f->tweenHeight(yScale, 0.5f);
                                 break;
                             case 5:
                                 pos = f->getPos();
-                                yScale = sin(pos.y/screenHeight*M_PI-pos.x/16.0f)*12.5f;
+                                yScale = sin(pos.y/screenHeight*M_PI-pos.x/16.0f)*fragHeightDelta + minFragHeight;
                                 f->tweenHeight(yScale, 0.5f);
                             break;
                         }
-                        f->tweenColor((yScale-minFragHeight)/(maxFragHeight-minFragHeight),0.5f);
+                        //f->tweenColor((yScale-minFragHeight)/(maxFragHeight-minFragHeight),0.5f);
 
                     }
                 }
